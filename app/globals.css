@@ -1,26 +1,222 @@
 @import "tailwindcss";
 
+/* Monolith Ultra Theme Tokens (Dark) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors */
+  --background: #131313; /* surface / background */
+  --on-surface: #e2e2e2;
+  --on-surface-variant: #c4c7c8;
+  --surface-container-lowest: #0e0e0e;
+  --surface-container-low: #1b1b1b;
+  --surface-container: #1f1f1f;
+  --surface-container-high: #2a2a2a;
+  --surface-container-highest: #353535;
+  --outline: #8e9192;
+  --outline-variant: #444748;
+  --primary: #ffffff;
+  --on-primary: #2f3131;
+  --secondary: #c7c6c6;
+  --on-secondary: #303031;
+
+  /* Typography families from next/font */
+  --font-inter: ui-sans-serif, system-ui;
+  --font-space-grotesk: ui-sans-serif, system-ui;
 }
 
 @theme inline {
+  /* Map tokens to Tailwind v4 theme vars */
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-surface: var(--surface-container);
+  --color-surface-low: var(--surface-container-low);
+  --color-surface-high: var(--surface-container-high);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+
+  --radius-sm: 0.125rem;
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base */
+html {
+  color-scheme: dark;
 }
-
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--on-surface);
+  font-family:
+    var(--font-inter),
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+/* Utilities matching the design system */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metal-border {
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-image-slice: 1;
+}
+
+.radial-glow {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 70%
+  );
+}
+
+.pressed-metal {
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+/* High-contrast text helpers */
+.text-muted {
+  color: var(--on-surface-variant);
+}
+.text-contrast {
+  color: var(--on-surface);
+}
+
+/* === Extra classes to match provided HTML variants exactly === */
+/* Advanced landing / How it Works */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.razor-edge {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.hero-glow {
+  background: radial-gradient(
+    circle at 50% -20%,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 50%
+  );
+}
+.glow-halo {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 70%
+  );
+}
+.faded-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent
+  );
+}
+.separator-line {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+}
+
+/* Studio */
+.glass-surface {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.glass-border-gradient {
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-image-slice: 1;
+}
+.obsidian-glow {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 70%
+  );
+}
+.metallic-button-inset {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Typography scale from Monolith Ultra */
+.font-h1 {
+  font-family: var(--font-space-grotesk);
+  font-size: 72px;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+.font-h2 {
+  font-family: var(--font-space-grotesk);
+  font-size: 48px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+.font-h3 {
+  font-family: var(--font-space-grotesk);
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+.font-body-lg {
+  font-family: var(--font-inter);
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+.font-body-md {
+  font-family: var(--font-inter);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+.font-label-sm {
+  font-family: var(--font-inter);
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  font-weight: 600;
 }
