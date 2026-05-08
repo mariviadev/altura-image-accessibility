@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Altura Webapp (Monolith Ultra Theme)
 
-## Getting Started
+Altura is a modern, privacy‑first SaaS landing + studio built with Next.js (App Router) and Tailwind v4.
 
-First, run the development server:
+- Dark “Monolith Ultra” metallic/glass aesthetic
+- Pages: Home, How It Works, Accessibility, About
+- Studio: local‑only image upload + URL preview with copyable results (Alt Text, Caption, SEO Title, SEO Description)
+- All CTAs route to `/studio`
+
+## Project Path
+
+Folder: `altura-webapp`
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd "/Users/mariamkhan/Documents/Career Studio/Projects/altura/altura-webapp"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run Locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install   # first time only
+npm run dev   # starts http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Key Routes
 
-## Learn More
+- `/` — Advanced landing (Obsidian Era, features, integration, FAQ)
+- `/how-it-works` — Architecture + Privacy bento + Performance
+- `/accessibility` — Accessibility guide (Why Alt‑Text Matters, 01/02/03, SEO copywriting)
+- `/about` — Mission, Status Quo, Obsidian AI metrics, Vision
+- `/studio` — Upload/URL preview, results panel (single‑column), copy with live region + toast
 
-To learn more about Next.js, take a look at the following resources:
+## Tech
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js 16 (App Router) + Turbopack
+- Tailwind CSS v4 (inline theme tokens)
+- `next/font` with Inter + Space Grotesk
+- Material Symbols (icons)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
+- The Studio preview frame is fixed‑size (square) to prevent layout shift when uploading different image ratios.
+- “Remove” sits centered at the bottom of the preview and clears the file + URL.
+- Result cards formatting matches the design: Alt/Caption (italic), SEO Title (bold uppercase), SEO Description (normal).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You can deploy to Vercel or any Node host:
+
+```bash
+npm run build
+npm start   # default on port 3000
+```
+
+For Vercel, follow Next.js deployment docs: https://nextjs.org/docs/app/building-your-application/deploying

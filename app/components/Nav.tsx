@@ -12,14 +12,15 @@ export default function Nav() {
   const pathname = usePathname();
   return (
     <nav className="fixed top-0 left-0 w-full z-50 glass border-b border-white/10">
-      <div className="max-w-[1280px] mx-auto h-20 px-8 flex items-center justify-between">
+      <div className="max-w-[1200px] mx-auto h-24 px-8 flex items-center justify-between">
         <Link
           href="/"
-          className="text-2xl font-bold tracking-tighter font-display text-white"
+          aria-label="Altura home"
+          className="font-['Space_Grotesk'] text-white uppercase font-bold tracking-tight text-[22px] sm:text-[24px] md:text-[26px] leading-none"
         >
-          Altura
+          ALTURA
         </Link>
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -35,8 +36,8 @@ export default function Nav() {
           ))}
         </div>
         <Link
-          href="/studio"
-          className="bg-white text-black px-6 py-2 font-display text-sm uppercase tracking-widest pressed-metal hover:opacity-90 active:scale-95 transition-all"
+          href="/#tool"
+          className="btn-primary"
         >
           Get Started
         </Link>

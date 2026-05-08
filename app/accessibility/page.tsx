@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Accessibility() {
   return (
     <main className="relative pt-28 pb-24">
@@ -53,7 +55,7 @@ export default function Accessibility() {
               </span>
               <h3 className="font-h3 text-white mb-2">The SEO Bridge</h3>
               <p className="font-body-md text-on-surface-variant opacity-70">
-                Search engines cannot "see" images. Alt‑text provides the
+                Search engines cannot &quot;see&quot; images. Alt‑text provides the
                 textual context needed to index your visuals, driving organic
                 traffic through semantic relevance.
               </p>
@@ -91,9 +93,9 @@ export default function Accessibility() {
               Be Descriptive
             </h4>
             <p className="font-body-md text-on-surface-variant opacity-70">
-              Describe the subject, the setting, and the mood. Instead of "Dog,"
-              use "Golden Retriever playing with a tennis ball in a sunlit
-              park."
+              Describe the subject, the setting, and the mood. Instead of
+              &quot;Dog,&quot; use &quot;Golden Retriever playing with a tennis
+              ball in a sunlit park.&quot;
             </p>
           </div>
           <div className="p-8 border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all group">
@@ -101,10 +103,11 @@ export default function Accessibility() {
               02
             </div>
             <h4 className="font-h3 text-xl text-white mb-4 uppercase tracking-tight">
-              Avoid "Image of"
+              Avoid &quot;Image of&quot;
             </h4>
             <p className="font-body-md text-on-surface-variant opacity-70">
-              Screen readers already announce images as "graphic" or "image."
+              Screen readers already announce images as &quot;graphic&quot; or
+              &quot;image.&quot;
               Don’t waste characters repeating it; dive straight into the
               description.
             </p>
@@ -146,8 +149,8 @@ export default function Accessibility() {
                       Natural Integration
                     </h5>
                     <p className="font-body-md text-on-surface-variant opacity-60">
-                      Never force keywords. If your image is of a 'minimalist
-                      watch', ensure that phrase fits naturally into the
+                      Never force keywords. If your image is of a
+                      &apos;minimalist watch&apos;, ensure that phrase fits naturally into the
                       description of the item.
                     </p>
                   </div>
@@ -187,8 +190,8 @@ export default function Accessibility() {
                       ALT TEXT CONFIGURATION
                     </p>
                     <p className="text-sm font-mono text-white/90">
-                      "Professional minimalist workspace featuring a high-end
-                      laptop on a dark marble desk with dramatic lighting."
+                      &quot;Professional minimalist workspace featuring a high-end
+                      laptop on a dark marble desk with dramatic lighting.&quot;
                     </p>
                   </div>
                 </div>
@@ -253,12 +256,12 @@ export default function Accessibility() {
                 </span>
               </div>
             </div>
-            <a
-              href="/studio"
-              className="bg-white text-black font-bold px-10 py-4 hover:bg-white/90 transition-all font-h3 text-lg inline-block"
+            <Link
+              href="/#tool"
+              className="btn-primary"
             >
               Start Building Accessibly
-            </a>
+            </Link>
           </div>
         </div>
       </section>

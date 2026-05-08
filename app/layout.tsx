@@ -20,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Altura — Precision Image SEO",
   description:
-    "Generate SEO titles, meta descriptions, captions, and accessible alt text privately in your browser.",
+    "Generate SEO titles, meta descriptions, captions, and accessible alt text with hosted vision-language AI.",
   icons: { icon: "/favicon.ico" },
 };
 

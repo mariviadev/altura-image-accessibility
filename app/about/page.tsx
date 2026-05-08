@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function About() {
   return (
     <main className="relative">
@@ -12,7 +14,7 @@ export default function About() {
         </h1>
         <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
           We believe visual intelligence should be accessible to everyone,
-          without the hidden cost of personal data harvesting.
+          with clear expectations about where AI processing happens.
         </p>
       </section>
 
@@ -37,13 +39,13 @@ export default function About() {
             <p className="font-body-lg text-on-surface/60">
               Altura was born from a simple realization: the web’s visual
               metadata is broken. We are democratizing high‑quality image SEO
-              while protecting user privacy.
+              while keeping the workflow transparent and reviewable.
             </p>
             <p className="font-body-md text-on-surface/40">
               Most visual AI today is locked behind walled gardens or fueled by
-              invasive data collection. We’ve built a tool that puts the power
-              of sophisticated SEO directly into the hands of creators, sans the
-              surveillance.
+              unclear data practices. We’ve built a tool that puts the power of
+              sophisticated SEO directly into the hands of creators, with plain
+              language around hosted model processing.
             </p>
           </div>
         </div>
@@ -93,7 +95,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Powered by Obsidian AI */}
+      {/* Powered by Hosted VLMs */}
       <section className="px-8 py-24 max-w-[1280px] mx-auto overflow-hidden">
         <div className="glass-card p-12 md:p-24 relative flex flex-col md:flex-row gap-16 items-center">
           <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
@@ -106,16 +108,17 @@ export default function About() {
                 Engine Technology
               </span>
             </div>
-            <h2 className="font-h2 text-white mb-6">Powered by Obsidian AI</h2>
+            <h2 className="font-h2 text-white mb-6">Powered by Hosted VLMs</h2>
             <p className="font-body-lg text-on-surface/60 mb-8">
-              The core engine of Altura is built on Obsidian AI — a proprietary,
-              lean vision model designed for speed and local‑first execution.
+              Altura uses Hugging Face Inference Providers to access modern
+              vision-language models that can read images and write distinct
+              SEO metadata in one pass.
             </p>
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <div className="text-white font-h3 mb-1">0ms</div>
+                <div className="text-white font-h3 mb-1">0</div>
                 <div className="font-label-sm text-white/40 uppercase">
-                  Server Retention
+                  App Databases
                 </div>
               </div>
               <div>
@@ -144,15 +147,15 @@ export default function About() {
         <h2 className="font-h2 text-white mb-8">The Vision</h2>
         <p className="font-h3 text-on-surface/80 leading-relaxed mb-12">
           We are building a faster, safer visual web. A future where every image
-          is accessible, every site is optimized, and no user privacy is
-          sacrificed in the process.
+          is accessible, every site is optimized, and AI data flow is explained
+          clearly before people use the tool.
         </p>
-        <a
-          href="/studio"
-          className="bg-white text-black px-12 py-5 font-display tracking-tight text-lg uppercase font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:scale-[1.02] transition-transform"
+        <Link
+          href="/#tool"
+          className="btn-primary"
         >
           Join the Mission
-        </a>
+        </Link>
       </section>
     </main>
   );

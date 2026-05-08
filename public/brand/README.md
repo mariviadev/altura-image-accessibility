@@ -1,0 +1,1 @@
+Place your exact wordmark here as `altura-wordmark.png` (preferably 240x66 or any ~240:66 aspect). The app will load this image in the header and footer. If the file is missing or fails to load, the UI falls back to a Space Grotesk SVG wordmark.

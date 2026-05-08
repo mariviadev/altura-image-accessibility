@@ -11,29 +11,30 @@ export default function HowItWorks() {
           <span className="text-white/40">the compromise.</span>
         </h1>
         <p className="font-body-lg max-w-2xl mx-auto text-white/70">
-          Altura leverages browser‑native WebAssembly to run complex models
-          locally — eliminating cloud inference, reducing latency, and
-          preserving privacy.
+          Altura uses a secure Next.js API route to send images to Hugging Face
+          Inference Providers, where hosted vision-language models generate
+          structured SEO metadata.
         </p>
       </header>
       <div className="max-w-[1280px] mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         <div>
           <h2 className="font-h2 text-white mb-4">
-            The Architecture: Client‑Side Compute
+            The Architecture: Hosted VLM Inference
           </h2>
           <p className="font-body-lg text-white/70 mb-6">
-            We deliver optimized WASM bundles that interface directly with your
-            device through WebGPU and WebAssembly.
+            The browser handles upload and preview. The server keeps the API
+            token private, forwards the image to a VLM provider, and returns
+            structured copy for each metadata field.
           </p>
           <div className="space-y-5">
             <div className="flex gap-4 items-start">
               <div className="glass-card p-2 border border-white/10">⚙️</div>
               <div>
                 <h4 className="font-display text-sm font-bold uppercase tracking-tight text-white mb-1">
-                  WASM Runtime
+                  Secure API Route
                 </h4>
                 <p className="text-white/60 text-sm">
-                  Near‑native performance within the browser sandbox.
+                  Tokens stay server-side while requests are sent over HTTPS.
                 </p>
               </div>
             </div>
@@ -41,10 +42,10 @@ export default function HowItWorks() {
               <div className="glass-card p-2 border border-white/10">🧠</div>
               <div>
                 <h4 className="font-display text-sm font-bold uppercase tracking-tight text-white mb-1">
-                  Neural Sharding
+                  Vision-Language Models
                 </h4>
                 <p className="text-white/60 text-sm">
-                  Dynamic partitioning balances memory load across hardware.
+                  Hosted models read the image and generate SEO-aware metadata.
                 </p>
               </div>
             </div>
@@ -63,7 +64,7 @@ export default function HowItWorks() {
             />
           </div>
           <p className="text-xs text-white/40 uppercase tracking-widest mt-4">
-            Schematic: Local Inference Engine
+            Schematic: Hosted Inference Flow
           </p>
         </div>
       </div>
@@ -72,37 +73,39 @@ export default function HowItWorks() {
           <div className="text-center mb-10">
             <h2 className="font-h2 text-white mb-2">Privacy by Design</h2>
             <p className="font-body-lg text-white/70">
-              The safest data is the data you never share.
+              Clear boundaries for every upload and generated response.
             </p>
           </div>
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-12 md:col-span-8 glass-card p-10">
-              <h3 className="font-h3 text-white mb-2">No Remote Logs</h3>
+              <h3 className="font-h3 text-white mb-2">No App Storage</h3>
               <p className="font-body-md text-white/70 max-w-md">
-                Processing happens in local RAM; no server‑side logs of your
-                prompts or results are ever created.
+                Altura does not intentionally store uploaded images, image URLs,
+                prompts, or generated metadata in an application database.
               </p>
             </div>
             <div className="col-span-12 md:col-span-4 glass-card p-10">
-              <h3 className="font-h3 text-white mb-2">Incognito Compute</h3>
+              <h3 className="font-h3 text-white mb-2">Provider Routing</h3>
               <p className="font-body-md text-white/70 text-sm">
-                The execution environment is sandboxed and isolated from other
-                tabs.
+                Requests are routed through Hugging Face to the selected
+                inference provider for the active model.
               </p>
             </div>
             <div className="col-span-12 md:col-span-4 glass-card p-10">
-              <h3 className="font-h3 text-white mb-2">Offline Utility</h3>
+              <h3 className="font-h3 text-white mb-2">Internet Required</h3>
               <p className="font-body-md text-white/70 text-sm">
-                Once cached, Altura runs without an internet connection.
+                The Studio needs network access because the VLM runs on hosted
+                inference infrastructure.
               </p>
             </div>
             <div className="col-span-12 md:col-span-8 glass-card p-0 overflow-hidden relative">
               <div className="absolute inset-0 p-10 flex flex-col justify-end bg-gradient-to-t from-black to-transparent" />
               <div className="h-60 w-full bg-black/30" />
               <div className="p-6">
-                <h3 className="font-h3 text-white mb-1">Immutable Privacy</h3>
+                <h3 className="font-h3 text-white mb-1">Transparent Limits</h3>
                 <p className="font-body-md text-white/70">
-                  A zero‑trust model that starts at the hardware level.
+                  Sensitive or confidential images should only be uploaded when
+                  you are comfortable with provider processing.
                 </p>
               </div>
             </div>
@@ -114,12 +117,12 @@ export default function HowItWorks() {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/3">
             <h2 className="font-h2 text-white mb-6">
-              Zero‑Latency <br />
+              Low-Friction <br />
               Performance
             </h2>
             <p className="text-on-surface-variant mb-6">
-              By eliminating the round‑trip to a data center, we reduce
-              inference latency from seconds to milliseconds.
+              Hosted VLMs avoid multi-gigabyte browser downloads while keeping
+              analysis fast enough for portfolio and production-style demos.
             </p>
             <a
               href="#"
@@ -132,40 +135,12 @@ export default function HowItWorks() {
             <div className="p-8 border border-white/5 bg-[var(--surface-container-high)] rounded-lg relative">
               <div className="absolute top-4 right-4">
                 <span className="text-xs font-bold text-white/20 uppercase">
-                  ms
-                </span>
-              </div>
-              <div className="text-5xl font-black text-white mb-2">12</div>
-              <div className="font-label-sm text-white/40 uppercase tracking-widest">
-                Average TTFT
-              </div>
-              <div className="mt-4 h-1 w-full bg-white/10">
-                <div className="h-1 bg-white w-1/12" />
-              </div>
-            </div>
-            <div className="p-8 border border-white/5 bg-[var(--surface-container-high)] rounded-lg relative">
-              <div className="absolute top-4 right-4">
-                <span className="text-xs font-bold text-white/20 uppercase">
-                  t/s
-                </span>
-              </div>
-              <div className="text-5xl font-black text-white mb-2">120</div>
-              <div className="font-label-sm text-white/40 uppercase tracking-widest">
-                Throughput Rate
-              </div>
-              <div className="mt-4 h-1 w-full bg-white/10">
-                <div className="h-1 bg-white w-3/4" />
-              </div>
-            </div>
-            <div className="p-8 border border-white/5 bg-[var(--surface-container-high)] rounded-lg relative">
-              <div className="absolute top-4 right-4">
-                <span className="text-xs font-bold text-white/20 uppercase">
                   gb
                 </span>
               </div>
-              <div className="text-5xl font-black text-white mb-2">0.0</div>
+              <div className="text-5xl font-black text-white mb-2">0</div>
               <div className="font-label-sm text-white/40 uppercase tracking-widest">
-                Data Uploaded
+                Browser Model Download
               </div>
               <div className="mt-4 h-1 w-full bg-white/10">
                 <div className="h-1 bg-white w-0" />
@@ -174,12 +149,40 @@ export default function HowItWorks() {
             <div className="p-8 border border-white/5 bg-[var(--surface-container-high)] rounded-lg relative">
               <div className="absolute top-4 right-4">
                 <span className="text-xs font-bold text-white/20 uppercase">
-                  p/w
+                  out
                 </span>
               </div>
-              <div className="text-5xl font-black text-white mb-2">10x</div>
+              <div className="text-5xl font-black text-white mb-2">4</div>
               <div className="font-label-sm text-white/40 uppercase tracking-widest">
-                Efficiency Multiplier
+                Metadata Outputs
+              </div>
+              <div className="mt-4 h-1 w-full bg-white/10">
+                <div className="h-1 bg-white w-full" />
+              </div>
+            </div>
+            <div className="p-8 border border-white/5 bg-[var(--surface-container-high)] rounded-lg relative">
+              <div className="absolute top-4 right-4">
+                <span className="text-xs font-bold text-white/20 uppercase">
+                  db
+                </span>
+              </div>
+              <div className="text-5xl font-black text-white mb-2">0.0</div>
+              <div className="font-label-sm text-white/40 uppercase tracking-widest">
+                App Storage
+              </div>
+              <div className="mt-4 h-1 w-full bg-white/10">
+                <div className="h-1 bg-white w-0" />
+              </div>
+            </div>
+            <div className="p-8 border border-white/5 bg-[var(--surface-container-high)] rounded-lg relative">
+              <div className="absolute top-4 right-4">
+                <span className="text-xs font-bold text-white/20 uppercase">
+                  api
+                </span>
+              </div>
+              <div className="text-5xl font-black text-white mb-2">HF</div>
+              <div className="font-label-sm text-white/40 uppercase tracking-widest">
+                Provider Router
               </div>
               <div className="mt-4 h-1 w-full bg-white/10">
                 <div className="h-1 bg-white w-full" />
@@ -199,20 +202,20 @@ export default function HowItWorks() {
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined">api</span>
               <span className="font-h3 text-xl font-bold uppercase">
-                WebGPU
+                API
               </span>
             </div>
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined">code</span>
-              <span className="font-h3 text-xl font-bold uppercase">WASM</span>
+              <span className="font-h3 text-xl font-bold uppercase">VLM</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined">data_object</span>
-              <span className="font-h3 text-xl font-bold uppercase">Rust</span>
+              <span className="font-h3 text-xl font-bold uppercase">JSON</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined">hub</span>
-              <span className="font-h3 text-xl font-bold uppercase">ONNX</span>
+              <span className="font-h3 text-xl font-bold uppercase">HF</span>
             </div>
           </div>
         </div>

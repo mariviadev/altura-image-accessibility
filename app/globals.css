@@ -51,6 +51,7 @@ html {
 body {
   background: var(--background);
   color: var(--on-surface);
+  line-height: 1.6;
   font-family:
     var(--font-inter),
     system-ui,
@@ -68,7 +69,7 @@ body {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .metal-border {
@@ -112,10 +113,10 @@ body {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .razor-edge {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .hero-glow {
   background: radial-gradient(
@@ -155,7 +156,7 @@ body {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .glass-border-gradient {
   border: 1px solid;
@@ -177,33 +178,108 @@ body {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+.btn-primary,
+.btn-secondary {
+  min-height: 48px;
+  border-radius: 999px;
+  padding: 16px 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-inter);
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    opacity 150ms ease,
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.btn-primary {
+  color: #0b0b0b;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.btn-secondary {
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.btn-secondary:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled,
+.btn-secondary:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.result-card .result-copy {
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+.result-card:hover .result-copy,
+.result-card:focus-within .result-copy {
+  opacity: 1;
+}
+
 /* Typography scale from Monolith Ultra */
 .font-h1 {
   font-family: var(--font-space-grotesk);
   font-size: 72px;
   line-height: 1.1;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
   font-weight: 700;
 }
 .font-h2 {
   font-family: var(--font-space-grotesk);
   font-size: 48px;
   line-height: 1.1;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   font-weight: 700;
 }
 .font-h3 {
   font-family: var(--font-space-grotesk);
   font-size: 32px;
   line-height: 1.2;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   font-weight: 600;
 }
 .font-body-lg {
   font-family: var(--font-inter);
   font-size: 18px;
   line-height: 1.6;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   font-weight: 400;
 }
 .font-body-md {
