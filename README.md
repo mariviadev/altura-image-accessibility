@@ -1,10 +1,12 @@
 # ALTURA — Image Accessibility & SEO Tool
 
-<img src="https://img.shields.io/badge/Next.js-3D1A6B?style=for-the-badge&logo=nextdotjs&logoColor=white" height="26" />
-<img src="https://img.shields.io/badge/TypeScript-3D1A6B?style=for-the-badge&logo=typescript&logoColor=white" height="26" />
-<img src="https://img.shields.io/badge/Node.js-3D1A6B?style=for-the-badge&logo=nodedotjs&logoColor=white" height="26" />
-<img src="https://img.shields.io/badge/Hugging_Face-3D1A6B?style=for-the-badge&logo=huggingface&logoColor=white" height="26" />
-<img src="https://img.shields.io/badge/Vercel-7d599b?style=for-the-badge&logo=vercel&logoColor=white" height="26" />
+<div>
+  <img src="https://img.shields.io/badge/Next.js-3D1A6B?style=for-the-badge&logo=nextdotjs&logoColor=white" height="26" />
+  <img src="https://img.shields.io/badge/TypeScript-3D1A6B?style=for-the-badge&logo=typescript&logoColor=white" height="26" />
+  <img src="https://img.shields.io/badge/Node.js-3D1A6B?style=for-the-badge&logo=nodedotjs&logoColor=white" height="26" />
+  <img src="https://img.shields.io/badge/Hugging_Face-3D1A6B?style=for-the-badge&logo=huggingface&logoColor=white" height="26" />
+  <img src="https://img.shields.io/badge/Vercel-7d599b?style=for-the-badge&logo=vercel&logoColor=white" height="26" />
+</div>
 
 ### Focus Areas
 
